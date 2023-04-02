@@ -25,7 +25,23 @@ const allowed = new Set([
   "-",
 ]);
 
-class Calculator {
+class Publisher {
+  _subscribers = new Set();
+
+  notify(message) {
+    this._subscribers.forEach((send) => send(message));
+  }
+
+  subscribe(callback) {
+    this._subscribers.add(callback);
+
+    return function unsubscribe() {
+      this._subscribers.delete(callback);
+    };
+  }
+}
+
+class Calculator extends Publisher {
   _root;
   _expressionElement;
   _answerElement;
@@ -33,9 +49,8 @@ class Calculator {
   _currentExpression = "";
   _currentAnswer = "";
 
-  _subscribers = new Set();
-
   constructor(root, expressionElement, answerElement, buttons) {
+    super();
     this._root = root;
     this._expressionElement = expressionElement;
     this._answerElement = answerElement;
@@ -112,18 +127,6 @@ class Calculator {
 
   evaluate(expression) {
     return eval(expression);
-  }
-
-  notify(message) {
-    this._subscribers.forEach((send) => send(message));
-  }
-
-  subscribe(callback) {
-    this._subscribers.add(callback);
-
-    return function unsubscribe() {
-      this._subscribers.delete(callback);
-    };
   }
 }
 
