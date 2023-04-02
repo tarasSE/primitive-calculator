@@ -11,7 +11,10 @@
     <div class="app">
       <div class="root">
         <div class="text">
-          <textarea class="expression" onload="evt => evt.target.reset()"></textarea>
+          <textarea
+            class="expression"
+            onload="evt => evt.target.reset()"
+          ></textarea>
           <div class="answer"></div>
         </div>
         <a href="#" class="btn num" data-value="7">7</a>
@@ -41,14 +44,7 @@
         <div class="history"></div>
       </div>
     </div>
-
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.min.js"
-      integrity="sha512-sl01o/gVwybF1FNzqO4NDRDNPJDupfN0o2+tMm4K2/nr35FjGlxlvXZ6kK6faa9zhXbnfLIXioHnExuwJdlTMA=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
+    
     <script src="main.js"></script>
   </body>
 </html>
