@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="root">
+        <div class="text">
+          <textarea class="expression" onload="evt => evt.target.reset()"></textarea>
+          <div class="answer"></div>
+        </div>
+        <a href="#" class="btn num" data-value="7">7</a>
+        <a href="#" class="btn num" data-value="8">8</a>
+        <a href="#" class="btn num" data-value="9">9</a>
+        <a href="#" class="btn ctrl" data-value="/">/</a>
+
+        <a href="#" class="btn num" data-value="4">4</a>
+        <a href="#" class="btn num" data-value="5">5</a>
+        <a href="#" class="btn num" data-value="6">6</a>
+        <a href="#" class="btn ctrl" data-value="*">*</a>
+
+        <a href="#" class="btn num" data-value="1">1</a>
+        <a href="#" class="btn num" data-value="2">2</a>
+        <a href="#" class="btn num" data-value="3">3</a>
+        <a href="#" class="btn ctrl" data-value="-">-</a>
+
+        <a href="#" class="btn num" data-value="0">0</a>
+        <a href="#" class="btn ctrl" data-value="Ans">Ans</a>
+        <a href="#" class="btn ctrl" data-value="Clear">C</a>
+        <a href="#" class="btn ctrl" data-value="+">+</a>
+      </div>
+
+      <div class="history-container">
+        <span>History:</span>
+
+        <div class="history"></div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/2.0.2/timeago.min.js"
+      integrity="sha512-sl01o/gVwybF1FNzqO4NDRDNPJDupfN0o2+tMm4K2/nr35FjGlxlvXZ6kK6faa9zhXbnfLIXioHnExuwJdlTMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
